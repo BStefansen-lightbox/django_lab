@@ -6,4 +6,5 @@ urlpatterns = [
     path('', views.index, name='index'),
     path('foobar', views.foobar, name='foobar'),
     path('squared', views.squared, name='squared'),
+    path('crud', views.ApiOverview, name='crud')
 ]

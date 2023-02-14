@@ -1,4 +1,8 @@
 from django.http import HttpResponse
+from rest_framework.decorators import api_view
+from rest_framework.response import Response
+from .models import Question
+from .serializers import ItemSerializer
 
 
 def index(request):
@@ -12,3 +16,11 @@ def squared(request):
     result = num**2
     return HttpResponse(f"Result: {result}")
 
+ 
+@api_view(['GET'])
+def ApiOverview(request):
+    api_urls = {
+        'all_items': '/',
+    }
+ 
+    return Response(api_urls)

@@ -6,3 +6,9 @@ def index(request):
 
 def foobar(request):
     return HttpResponse("foobar fizz buzz")
+
+def squared(request):
+    num = int(request.GET.get("number"))
+    result = num**2
+    return HttpResponse(f"Result: {result}")
+
